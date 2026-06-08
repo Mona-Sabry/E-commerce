@@ -11,6 +11,7 @@ import AddToCartButton from '@/app/_components/ProductCard/AddToCartButton';
 import ProductGallery from '@/app/_components/ProductGallery/ProductGallery';
 import ProductActions from '@/app/_components/ProductActions/ProductActions';
 import Details from '@/app/_components/Details/Details';
+import ProductInfo from '@/app/_components/ProductInfo/ProductInfo';
 
 const style='w-[180px] h-[100px]  flex flex-row justify-center gap-2 items-center bg-white pl-0 pb-3';
 const iconStyle = 'w-[40] h-[40] text-2xl text-[#16A34A] bg-[#DCFCE7] p-3 rounded-full';
@@ -119,13 +120,14 @@ count={Number(productDetails?.ratingsQuantity)}
 <hr className='w-[90%] text-center pl-6'/>
  <h3 className='text-base font-medium text-[#4a5565] p-6'>{productDetails?.description}</h3>
 
-<ProductActions product={productDetails} />
+<ProductInfo productDetails={productDetails} />
+{/* <ProductActions product={productDetails} />
 
 <div className='flex flex-row gap-3 my-5 ml-5 mr-5'>
  <AddToCartButton id={productDetails?.id ||""}/>
   <button className='flex-1 flex items-center justify-center gap-2 bg-black text-white p-4 rounded-xl cursor-pointer  active:scale-98'>
     <FaBolt/>Buy Now</button>
-</div>
+</div> */}
 
  <div className='flex flex-row gap-3 my-5 ml-5 mr-5'>
 <button className='flex-11 flex items-center justify-center gap-2 border border-gray-300 p-3 rounded-xl cursor-pointer hover:text-[#16A367] hover:border-[#86EFAC]'>

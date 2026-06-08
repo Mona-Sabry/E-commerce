@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils"
 
 type Props = {
   id: string;
+  quantity?: number;
 };
 
 function Spinner({ className, ...props }: React.ComponentProps<"svg">) {
@@ -22,14 +23,14 @@ function Spinner({ className, ...props }: React.ComponentProps<"svg">) {
   )
 }
 
-export default function AddToCartButton({ id }: Props) {
+export default function AddToCartButton({ id,quantity }: Props) {
   const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
 
   async function handleClick() {
     try {
       setStatus("loading");
 
-      await addProductToCart(id); 
+      await addProductToCart(id, quantity ?? 1); 
 
       setStatus("success");
 

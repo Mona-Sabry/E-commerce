@@ -2,8 +2,8 @@
 import { decodeAuthenticatedUserToken} from '../utilities';
 
 
-export async function addProductToCart(id:string){
-    const bodyObj = {productId:id}
+export async function addProductToCart(id:string,  quantity: number = 1){
+    const bodyObj = {productId:id ,count: quantity,}
  const userToken = await decodeAuthenticatedUserToken();
 
  if(userToken){
